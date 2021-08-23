@@ -1,5 +1,5 @@
 <template>
-  <div ref="porta">
+  <div ref="stack">
     <p class="skills__text ta-c">В работе использую следующий стек:</p>
     <div class="skills-stack">
       <div
@@ -38,6 +38,10 @@
 </template>
 
 <script>
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 export default {
   data() {
     return {
@@ -120,21 +124,23 @@ export default {
             (element.percent / 100) * element.circumference);
       });
     },
+
+    scrollTrigger() {
+      ScrollTrigger.create({
+        trigger: this.$refs.stack,
+        onEnter: () => this.circleBar(),
+        start: "top 20%",
+        end: "bottom 80%",
+      });
+    },
   },
 
   /* eslint-disable no-unused-vars */
   mounted() {
-    const options = {
-      rootMargin: "0px",
-      threshold: 0.7,
-    };
-    const callback = (entries, observer) => {
-      if (entries[0].isIntersecting) {
-        this.circleBar();
-      }
-    };
-    const observer = new IntersectionObserver(callback, options);
-    observer.observe(this.$refs.porta);
+    window.addEventListener("scroll", this.scrollTrigger());
+  },
+  unmounted() {
+    window.remooveEventListener("scroll", this.scrollTrigger());
   },
   /* eslint-enable no-unused-vars */
 };

@@ -55,6 +55,8 @@
     }
 
     @media (max-width: $breakpoint-md-min) {
+        padding: $pd-vert * 0.2 0;
+
         &-container {
             position: absolute;
             top: 100%;

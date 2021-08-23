@@ -36,7 +36,6 @@ export default {
       let tl = gsap.timeline({
         scrollTrigger: {
           trigger: ".wrapper-portfolio",
-          //   markers: true,
           onEnter: () => (this.showing = true),
           start: "top 20%",
           end: "bottom 80%",

@@ -1,16 +1,12 @@
 <template>
   <header class="wrapper-outer wrapper-nav">
     <transition name="shadow">
-      <div
-        ref="shadowAnim"
-        class="wrapper-nav__shadow"
-        v-if="show.shadow"
-      ></div>
+      <div class="wrapper-nav__shadow" v-if="show.shadow" @click="burger"></div>
     </transition>
     <div class="wrapper-inner nav">
       <burger-menu @change="burger" :checked="show.shadow" />
-      <transition name="nav">
-        <div ref="navAnim" :class="navСontainer" v-show="show.nav">
+      <transition name="nav" @enter="enterNav" @after-leave="afterLeaveNav">
+        <div class="nav-container" :class="navСontainer" v-show="show.nav">
           <nav class="nav-main">
             <ul class="nav-main-list">
               <li
@@ -55,15 +51,9 @@ export default {
     return {
       show: {
         shadow: false,
-        nav: true,
+        nav: false,
       },
-      shadow: {
-        "wrapper-nav__shadow": true,
-        "wrapper-nav__shadow--active": true,
-      },
-
       navСontainer: {
-        "nav-container": true,
         "nav-container--active": false,
       },
       navLinks: [
@@ -98,17 +88,22 @@ export default {
     },
 
     resize() {
-      if (document.documentElement.clientWidth < 768) {
-        this.navСontainer["nav-container--active"] = true;
+      if (document.documentElement.clientWidth <= 768) {
         this.show.nav = false;
         this.show.shadow = false;
       } else {
-        this.navСontainer["nav-container--active"] = false;
         this.show.nav = true;
       }
     },
+    enterNav(done) {
+      this.navСontainer["nav-container--active"] = true;
+      done;
+    },
+    afterLeaveNav(done) {
+      this.navСontainer["nav-container--active"] = false;
+      done;
+    },
   },
-
   mounted: function () {
     window.addEventListener("resize", this.resize);
     this.resize();

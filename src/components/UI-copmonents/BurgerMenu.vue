@@ -4,7 +4,7 @@
       class="btn-burger__checkbox"
       type="checkbox"
       id="check"
-      :value="checked"
+      :checked="checked"
     />
     <span class="btn-burger__line"></span>
     <span class="btn-burger__line"></span>
