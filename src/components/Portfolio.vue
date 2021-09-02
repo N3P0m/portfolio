@@ -19,7 +19,7 @@
               v-html="key.text"
             ></li>
           </ul>
-          <Project-link :link="`https://github.com/N3P0m/`" />
+          <Project-link :link="`https://n3p0m.github.io/calculator/`" />
         </div>
       </div>
       <div class="to-do-list">
