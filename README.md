@@ -5,7 +5,7 @@
 <img align="center" src="/readme__assets/portfolio-demo.gif" width="80%" alt="demo" >
 </p>
 
-<h2 align="center"><a  href="https://solitairevue.firebaseapp.com">Ссылка на сайт</a></h2>
+<h2 align="center"><a  href="https://n3p0m.github.io/portfolio/">Ссылка на сайт</a></h2>
 
 ## Описание
 
