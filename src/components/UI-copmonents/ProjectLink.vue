@@ -1,5 +1,5 @@
 <template>
-  <a class="project-link" :href="link" target="_blank">
+  <a class="project-link" :href="link" target="_blank" rel="noopener">
     <img :src="choiseImgLink" alt="Ссылка на проект" />
   </a>
 </template>

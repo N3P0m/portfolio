@@ -67,18 +67,18 @@ export default {
           img: require("@/assets/img/4-Portfolio/image-1.webp"),
           link: "https://n3p0m.github.io/productivity_for_portfolio/",
           projecLinks: {
-            git: "https://n3p0m.github.io/",
+            git: "https://github.com/N3P0m/productivity_for_portfolio",
             figma:
               "https://www.figma.com/file/cy10u3edK8RvVOqRLb3tVi/clean_and_simple_website_freebie_work_file-(Copy)?node-id=0%3A1&viewport=241%2C48%2C1",
           },
         },
         {
           img: require("@/assets/img/4-Portfolio/portfolio-thumb.webp"),
-          link: "https://n3p0m.github.io/productivity_for_portfolio/",
+          link: "https://n3p0m.github.io/portfolio/",
           projecLinks: {
-            git: "https://n3p0m.github.io/",
+            git: "https://github.com/N3P0m/portfolio",
             figma:
-              "https://www.figma.com/file/cy10u3edK8RvVOqRLb3tVi/clean_and_simple_website_freebie_work_file-(Copy)?node-id=0%3A1&viewport=241%2C48%2C1",
+              "https://www.figma.com/file/IwWJcnzpcu9ButSVXxy5o8/Portfolio?node-id=606%3A8",
           },
         },
       ],
